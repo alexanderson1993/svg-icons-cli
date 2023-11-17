@@ -23,7 +23,7 @@ npm install --save-dev svg-icons-cli
 
 And then use it in your package.json
 
-````json
+```json
 {
   "scripts": {
     "build:icons": "icons build"
@@ -35,7 +35,7 @@ or call it directly with `npx`
 
 ```bash
 npx svg-icons-cli build
-````
+```
 
 ## Usage
 
