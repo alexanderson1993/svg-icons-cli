@@ -29,6 +29,7 @@ And then use it in your package.json
     "build:icons": "icons build"
   }
 }
+```
 
 or call it directly with `npx`
 
