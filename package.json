@@ -1,6 +1,6 @@
 {
   "name": "svg-icons-cli",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -10,8 +10,20 @@
   "bin": {
     "icons": "./index.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexanderson1993/svg-icons-cli"
+  },
+  "readme": "https://github.com/alexanderson1993/svg-icons-cli",
+  "keywords": [
+    "icons",
+    "svg",
+    "react",
+    "cli"
+  ],
+  "author": {
+    "name": "Alex Anderson"
+  },
   "license": "ISC",
   "dependencies": {
     "@clack/prompts": "^0.7.0",
