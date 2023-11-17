@@ -6,6 +6,9 @@
 
 Including SVGs in your JavaScript bundles is convenient, but [slow and expensive](https://x.com/_developit/status/1382838799420514317?s=20). Using `<img>` tags with SVGs isn't flexible. The best way to use icons is an SVG spritesheet, but there isn't an out-of-the-box tool to create those spritesheets.
 
+> [!TIP]
+> Don't know what SVG sprite sheets are? Check out [this blog post explaining this technique](https://benadam.me/thoughts/react-svg-sprites/).
+
 ## The Solution
 
 A CLI tool that
