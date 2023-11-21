@@ -59,8 +59,7 @@ npx svg-icons-cli init
 - `-o, --output`: Where to store the Icon component. Defaults to `components/ui`
 - `-t, --types`: Where to store the default type definition file. Defaults to `types/icon-name.d.ts`
 
-> [!NOTE]
-> **Why not export `<Icon>` from this package?**
+> [!NOTE] > **Why not export `<Icon>` from this package?**
 >
 > The `<Icon>` component is built using Tailwind classes, which is my preferred way to write CSS. Your app might use your own classes, CSS modules, or some other styling method. Instead of shipping a million different implementations, the CLI will put a small component in your app that you can modify to your hearts content. Or, you can follow the manual installation instructions below.
 
@@ -250,6 +249,7 @@ npx svg-icons-cli build
 
 - `-i, --input`: The folder where the source SVG icons are stored
 - `-o, --output`: Where to output the sprite sheet and types
+- `--optimize`: Automatically optimize the output SVG using SVGO. You can [configure SVGO](https://github.com/svg/svgo#configuration) by placing a `svgo.config.js` file in the directory where you run the CLI.
 
 > [!TIP]
 > We recommend using the [Sly CLI](https://sly-cli.fly.dev) to bring icons into your project. It can be configured with many icon repositories, and can run the build command after new icons have been added.
