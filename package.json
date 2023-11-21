@@ -1,6 +1,6 @@
 {
   "name": "svg-icons-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -30,6 +30,7 @@
     "clsx": "^2.0.0",
     "glob": "^10.3.10",
     "node-html-parser": "^6.1.11",
+    "svgo": "^3.0.4",
     "tailwind-merge": "^2.0.0",
     "tiny-parse-argv": "^2.2.0",
     "typescript": "^5.2.2"
