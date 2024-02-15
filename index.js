@@ -170,7 +170,7 @@ icons build -i ${input} -o ${output}${shouldOptimize ? " --optimize" : ""}`,
   } else {
     mkdirSync(outputDir, { recursive: true });
     const spriteFilepath = path.join(outputDir, "sprite.svg");
-    const typeOutputFilepath = path.join(outputDir, "name.d.ts");
+    const typeOutputFilepath = path.join(outputDir, "icon-name.d.ts");
     const currentSprite = await fs
       .readFile(spriteFilepath, "utf8")
       .catch(() => "");
@@ -483,7 +483,7 @@ ${
 If you're using TypeScript, you'll need to configure your tsconfig.json to include the generated types:
 
 "paths": {
-  "~/icon-name": ["${iconsOutput}/name.d.ts", "${types}"]
+  "~/icon-name": ["${iconsOutput}/icon-name.d.ts", "${types}"]
 }`
     : ""
 }`);

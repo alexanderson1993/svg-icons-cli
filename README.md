@@ -221,7 +221,7 @@ And set up your paths in tsconfig.json
 
 ```json
 "paths": {
-  "~/icon-name": ["${iconsOutput}/name.d.ts", "${types}"]
+  "~/icon-name": ["${iconsOutput}/icon-name.d.ts", "${types}"]
 }
 ```
 
