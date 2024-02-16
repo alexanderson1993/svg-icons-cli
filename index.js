@@ -68,7 +68,7 @@ switch (command) {
   Options:
     -i, --input     The relative path where the source SVGs are stored
     -o, --output    Where the output sprite sheet and types should be stored
-    --spriteDir     Where the output sprite sheet should be stored (default to output param)
+    -s  --spriteDir     Where the output sprite sheet should be stored (default to output param)
     --optimize      Optimize the output SVG using SVGO. 
     --help          Show help
   `,
@@ -145,7 +145,7 @@ async function build() {
   }
   if (isCancel(output)) process.exit(1);
   const outputDir = path.join(cwd, output);
-  const spriteDir = path.join(cwd, args.spriteDir ?? output);
+  const spriteDir = path.join(cwd, (args.s || args.spriteDir) ?? output);
   if (typeof args.optimize === "undefined" && !hasNoInput) {
     const choseOptimize = await confirm({
       message: "Optimize the output SVG using SVGO?",
