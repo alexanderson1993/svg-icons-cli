@@ -60,8 +60,9 @@ npx svg-icons-cli init
 - `-s  --spriteDir`: Where to store the sprite svg. Defaults to output arg value
 - `-t, --types`: Where to store the default type definition file. Defaults to `types/icon-name.d.ts`
 
-> [!NOTE] > **Why not export `<Icon>` from this package?**
+> [!NOTE]
 >
+> **Why not export `<Icon>` from this package?**
 > The `<Icon>` component is built using Tailwind classes, which is my preferred way to write CSS. Your app might use your own classes, CSS modules, or some other styling method. Instead of shipping a million different implementations, the CLI will put a small component in your app that you can modify to your hearts content. Or, you can follow the manual installation instructions below.
 
 #### Manual Installation
@@ -203,7 +204,9 @@ export function Icon({ name, size = "font", className, children, ...props }) {
 
 </details>
 
-> [!NOTE] > **Be careful with how you load your sprites**
+> [!NOTE]
+>
+> **Be careful with how you load your sprites**
 > Note how we're `import`ing the sprite asset in the components above. This assumes you're using a framework that automatically [adds a content hash to your sprite's filename](https://vitejs.dev/guide/assets#importing-asset-as-url) when you build your app. If your framework doesn't allow you to import assets like that, you might want to put it in your `/public` folder. This is fine, so long as [your framework doesn't instruct browsers to cache these assets](https://nextjs.org/docs/pages/building-your-application/optimizing/static-assets#caching). If your sprites are cached by browsers, any changes you make to the sprite sheet wouldn't be loaded by those browsers, so some of your sprites might look wrong or go missing.
 
 Install the dependencies.
