@@ -57,6 +57,7 @@ npx svg-icons-cli init
 #### Options
 
 - `-o, --output`: Where to store the Icon component. Defaults to `components/ui`
+- `--spriteDir`: Where to store the sprite svg. Defaults to output arg value
 - `-t, --types`: Where to store the default type definition file. Defaults to `types/icon-name.d.ts`
 
 > [!NOTE] > **Why not export `<Icon>` from this package?**
