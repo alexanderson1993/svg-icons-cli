@@ -113,6 +113,7 @@ async function build() {
   let input = args.i || args.input;
   let output = args.o || args.output;
   let giveHint = false;
+  const hasNoInput = !input;
   if (!input) {
     giveHint = true;
     input = await text({
@@ -145,7 +146,7 @@ async function build() {
   if (isCancel(output)) process.exit(1);
   const outputDir = path.join(cwd, output);
   const spriteDir = path.join(cwd, args.spriteDir ?? output);
-  if (typeof args.optimize === "undefined") {
+  if (typeof args.optimize === "undefined" && !hasNoInput) {
     const choseOptimize = await confirm({
       message: "Optimize the output SVG using SVGO?",
     });
@@ -533,6 +534,7 @@ async function parsePackageJson() {
 function iconName(file) {
   return file.replace(/\.svg$/, "");
 }
+
 /**
  * Creates a single SVG file that contains all the icons
  */
@@ -571,12 +573,28 @@ async function generateSvgSprite({
   ].join("\n");
 
   if (shouldOptimize) {
-    const config = (await loadConfig()) || undefined;
+    const config = (await loadConfig()) || { plugins: [] };
+    if (!config.plugins) {
+      config.plugins = [];
+    }
+    config.plugins.push({
+      name: "preset-default",
+      params: {
+        overrides: {
+          removeHiddenElems: false,
+          cleanupIds: false,
+          convertPathData: {
+            floatPrecision: 5,
+          },
+        },
+      },
+    });
     output = optimize(output, config).data;
   }
 
   return writeIfChanged(outputPath, output);
 }
+
 async function writeIfChanged(filepath, newContent) {
   const currentContent = await fs.readFile(filepath, "utf8").catch(() => "");
   if (currentContent === newContent) return false;
